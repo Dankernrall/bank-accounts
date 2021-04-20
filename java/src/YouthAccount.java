@@ -1,13 +1,17 @@
 public class YouthAccount extends BankAccount {
 //Молодежный счет
 
+    final double CASHBACKPERC = 0.02;
+    final int FINE = 300;
+
+
     public YouthAccount(String fio, double balance, int pinCode, int month) {
         super(fio, balance, pinCode, month);
     }
 
     @Override
     public double cashBack(double buyPrice) {
-        return buyPrice * 0.02;
+        return buyPrice * CASHBACKPERC;
     }
 
     @Override
@@ -15,8 +19,8 @@ public class YouthAccount extends BankAccount {
         month++; //Прибавляем месяц
         String totalCommission = "Штраф составил: ";
         if (check == 0) { //Если не было ни одной операции зачисляем штраф
-            balance -= 300;
-            return totalCommission + 300;
+            balance -= FINE;
+            return totalCommission + FINE;
         }
         check = 0;
         return "У вас нет штрафа";

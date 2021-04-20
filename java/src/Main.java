@@ -40,7 +40,7 @@ public class Main {
                     break;
             }
         } catch (InputMismatchException e) {
-            System.out.println("Введен не верный символ!");
+            System.out.println("Введен неверный символ!");
         }
     }
 }

@@ -1,6 +1,7 @@
 public class AdvancedAccount extends BankAccount {
     //Продвинутый счет
 
+    final double CASHBACKPERC = 0.01;
     final int COMMISSION = 100; //Коммиссия
     final int PERCENT = 10; //Процент
 
@@ -11,10 +12,10 @@ public class AdvancedAccount extends BankAccount {
     //Рассчет кэшбека
     @Override
     public double cashBack(double buyPrice) {
-        if (buyPrice * 0.01 > 100) {
+        if (buyPrice * CASHBACKPERC > 100) {
             return 100;
         } else {
-            return buyPrice * 0.01;
+            return buyPrice * CASHBACKPERC;
         }
 
     }
